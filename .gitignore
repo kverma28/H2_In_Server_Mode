@@ -1,0 +1,30 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### Gradle ###
+.gradle
+/**/.gradle/
+build
+/**/build/
+
+
+### Maven ###
+/**/target
+
+### Eclipse ###
+/**/.settings
+/**/*.project
+/**/*.classpath
+/.metadata
+
+### Others ###
+
+/RemoteSystemsTempFiles
+/**/.recommenders
+/**/.factorypath
+/**/.sonarlint
+
