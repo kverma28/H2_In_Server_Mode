@@ -3234,3 +3234,14 @@ INSERT INTO grade_conversion VALUES ('F ',0,59,2,'BMOTIVAL',TO_DATE('01-JAN-1993
 INSERT INTO grade_conversion VALUES ('IN',0,0,0,'BMOTIVAL',TO_DATE('01-JAN-1993 00:00:00','DD-MON-YYYY HH24:MI:SS'),'BMOTIVAL',TO_DATE('01-JAN-1993 00:00:00','DD-MON-YYYY HH24:MI:SS'));
 
 COMMIT;
+
+
+--Data for spring security authentication
+
+INSERT INTO users (username,password,enabled) values ('KV', 'KvPassword', true);
+INSERT INTO users (username,password,enabled) values ('KP', 'KpPassword', true);
+
+INSERT INTO authorities (username,authority) values ('KV', 'Admin');
+INSERT INTO authorities (username,authority) values ('KP', 'User');
+
+COMMIT;
