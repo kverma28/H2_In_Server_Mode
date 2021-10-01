@@ -122,3 +122,19 @@ CREATE TABLE PAYMENT (
 
 );
 
+--Tables for spring security authentication
+
+create table USERS(
+    USERNAME VARCHAR(50) not null primary key,
+    PASSWORD VARCHAR(50) not null,
+    ENABLED BOOLEAN not null
+);
+
+create table AUTHORITIES (
+    USERNAME VARCHAR(50) not null,
+    AUTHORITY VARCHAR(50) not null,
+    constraint fk_authorities_users foreign key(username) references users(username)
+);
+
+create unique index ix_auth_username on authorities (username,authority);
+
