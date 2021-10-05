@@ -7800,10 +7800,7 @@ INSERT  INTO PAYMENT ( CUSTOMER_ID, CHECK_NUMBER, PAYMENT_DATE, AMOUNT ) VALUES
 
 --Data for spring security authentication
 
-INSERT INTO users (username,password,enabled) values ('KV', 'KvPassword', true);
-INSERT INTO users (username,password,enabled) values ('KP', 'KpPassword', true);
-
-INSERT INTO authorities (username,authority) values ('KV', 'Admin');
-INSERT INTO authorities (username,authority) values ('KP', 'User');
+INSERT INTO users (username,password,authority,enabled) values ('KV', 'KvPassword','Admin', true);
+INSERT INTO users (username,password,authority,enabled) values ('KP', 'KpPassword','User', true);
 
 COMMIT;
