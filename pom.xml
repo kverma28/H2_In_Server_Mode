@@ -21,15 +21,17 @@
     </properties>
 
     <dependencies>
-
+        <!--Required for H2-console UI-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--Required for creating Data Source for H2 database-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!--Basic dependency to create in-memory database-->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
