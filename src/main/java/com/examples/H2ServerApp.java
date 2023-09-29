@@ -1,7 +1,6 @@
 package com.examples;
 
 import com.zaxxer.hikari.HikariDataSource;
-import lombok.extern.slf4j.Slf4j;
 import org.h2.tools.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,24 +12,23 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
-@Slf4j
 @SpringBootApplication
-public class App {
+public class H2ServerApp {
     public static void main(String[] args) throws SQLException {
-        ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(H2ServerApp.class, args);
 
         DataSource hikariDS = context.getBean(HikariDataSource.class);
         Connection connection = hikariDS.getConnection();
-        log.info("Database Schema : {}", connection.getSchema());
+        System.out.println("Database Schema : " + connection.getSchema());
 
         DatabaseMetaData metaData = connection.getMetaData();
 
-        log.info("Database Driver Name : {}", metaData.getDriverName());
-        log.info("Database User Name : {}", metaData.getUserName());
-        log.info("Database product name : {}", metaData.getDatabaseProductName());
-        log.info("Database Connection URL for embedded mode : {}", metaData.getURL());
-        log.info("Database Connection URL for server mode : jdbc:h2:tcp://localhost:{}/mem:testdb", context.getEnvironment().getProperty("h2.port"));
-        log.info("H2 console can be accessed at : http://localhost:{}/h2-console", context.getEnvironment().getProperty("server.port"));
+        System.out.println("Database Driver Name : " + metaData.getDriverName());
+        System.out.println("Database User Name : " + metaData.getUserName());
+        System.out.println("Database product name : " + metaData.getDatabaseProductName());
+        System.out.println("Database Connection URL for embedded mode : " + metaData.getURL());
+        System.out.println("Database Connection URL for server mode : jdbc:h2:tcp://localhost:" + context.getEnvironment().getProperty("h2.port") + "/mem:testdb");
+        System.out.println("H2 console can be accessed at : http://localhost:" + context.getEnvironment().getProperty("server.port") + "/h2-console");
     }
 
     @Bean(initMethod = "start", destroyMethod = "stop")

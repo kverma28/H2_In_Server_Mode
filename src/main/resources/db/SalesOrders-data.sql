@@ -17,7 +17,7 @@ INSERT  INTO OFFICE ( OFFICE_CODE, CITY, PHONE, ADDRESS_LINE1, ADDRESS_LINE2, ST
 (7,'London','+44 20 7877 2041','25 Old Broad Street','Level 7',NULL,'UK','EC2N 1HN','EMEA');
 
 
-COMMIT;
+
 
 
 
@@ -40,7 +40,7 @@ INSERT  INTO PRODUCT_LINE ( PRODUCT_LINE, TEXT_DESCRIPTION, HTML_DESCRIPTION, IM
 
 ('Vintage Cars','Our Vintage Car models realistically portray automobiles produced from the early 1900s through the 1940s. Materials used include Bakelite, diecast, plastic and wood. Most of the replicas are in the 1:18 and 1:24 scale sizes, which provide the optimum in detail and accuracy. Prices range from $30.00 up to $180.00 for some special limited edition replicas. All models include a certificate of authenticity from their manufacturers and come fully assembled and ready for display in the home or office.',NULL,NULL);
 
-COMMIT;
+
 
 
 
@@ -270,7 +270,7 @@ INSERT  INTO  PRODUCT ( PRODUCT_CODE , PRODUCT_NAME , PRODUCT_LINE , PRODUCT_SCA
 ('S72_3212','Pont Yacht','Ships','1:72','Unimax Art Galleries','Measures 38 inches Long x 33 3/4 inches High. Includes a stand.\r\nMany extras including rigging, long boats, pilot house, anchors, etc. Comes with 2 masts, all square-rigged',414,'33.30','54.60');
 
 
-COMMIT;
+
 
 
 
@@ -329,7 +329,7 @@ INSERT INTO EMPLOYEE ( EMPLOYEE_ID , LAST_NAME , FIRST_NAME , EXTENSION , EMAIL 
 (1702,'Gerard','Martin','x2312','mgerard@classicmodelcars.com',4, 1102,'Sales Rep');
 
 
-COMMIT;
+
 
 
 
@@ -583,7 +583,7 @@ INSERT  INTO CUSTOMER ( CUSTOMER_ID, CUSTOMER_NAME, CONTACT_LAST_NAME, CONTACT_F
 
 (496,'Kellys Gift Shop','Snowden','Tony','+64 9 5555500','Arenales 1938 3A',NULL,'Auckland  ',NULL,NULL,'New Zealand',1612,'110000.00');
 
-COMMIT;
+
 
 /*Data for the table 'orders' */
 
@@ -1241,7 +1241,6 @@ INSERT  INTO ORDERS ( ORDER_NUMBER, ORDER_DATE, REQUIRED_DATE, SHIPPED_DATE, STA
 
 (10425,'2005-05-31','2005-06-07',NULL,'In Process',NULL,119);
 
-COMMIT;
 
 
 /*Data for the table 'orderdetails' */
@@ -7241,7 +7240,7 @@ INSERT  INTO ORDER_DETAIL ( ORDER_NUMBER, PRODUCT_CODE, QUANTITY_ORDERED, PRICE_
 (10425,'S50_1392',18,'94.92',2);
 
 
-COMMIT;
+
 
 
 
@@ -7798,9 +7797,5 @@ INSERT  INTO PAYMENT ( CUSTOMER_ID, CHECK_NUMBER, PAYMENT_DATE, AMOUNT ) VALUES
 
 (496,'MN89921','2004-12-31','52166.00');
 
---Data for spring security authentication
 
-INSERT INTO users (username,password,authority,enabled) values ('KV', 'KvPassword','Admin', true);
-INSERT INTO users (username,password,authority,enabled) values ('KP', 'KpPassword','User', true);
 
-COMMIT;
